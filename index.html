@@ -1,33 +1,65 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fitness Growth</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness Growth Achievements</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff0f0;
+      color: #333;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #d62828;
+    }
+
+    .badge {
+      border: 2px solid #d62828;
+      border-radius: 12px;
+      padding: 10px 15px;
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+    }
+
+    .badge.earned {
+      background-color: #d62828;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <header> 
-    <h1>Fitness Growth</h1> 
-    <img src="images/
-      sumo-deadlift-illustration-768x438.jpg"
-      alt="Fitness Growth Banner"
-      style="width:100%; border-radius:
-      10px;" />
-  
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="workouts.html">Workouts</a>
-      <a href="nutrition.html">Nutrition</a>
-      <a href="progress.html">Progress</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Welcome to Fitness Growth</h2>
-    <p>Your personal guide to getting fit and staying healthy!</p>
-  </main>
-  <footer>
-    <p>&copy; 2025 Fitness Growth</p>
-  </footer>
+  <h1>Achievements</h1>
+  <div id="badges">
+    <!-- Badges will be added here -->
+  </div>
+
+  <script>
+    const badges = [
+      { name: "First Workout", earned: true },
+      { name: "5 Workouts", earned: false },
+      { name: "Consistency King", earned: false }
+    ];
+
+    const container = document.getElementById("badges");
+
+    badges.forEach(badge => {
+      const badgeEl = document.createElement("div");
+      badgeEl.className = `badge${badge.earned ? " earned" : ""}`;
+      badgeEl.textContent = badge.name;
+      container.appendChild(badgeEl);
+    });
+  </script>
 </body>
 </html>
+
+
+
